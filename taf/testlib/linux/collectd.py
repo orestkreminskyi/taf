@@ -183,7 +183,7 @@ class Collectd(object):
         super(Collectd, self).__init__()
         self.send_command = cli_send_command
         self.collectd_conf = collectd_conf if collectd_conf else self.DEFAULT_COLLECTD_CONF
-        self.service_manager = service_lib.specific_service_manager_factory(self.SERVICE, self.send_command)
+        self.service_manager = service_lib.SpecificServiceManager(self.SERVICE, self.send_command)
 
         # Data structure presenting content of collectd.conf
         self.plugins_config = None
